@@ -10,7 +10,7 @@ const DataDetailsListComponent = () => {
 
   const yonlendir = useNavigate();
 
-  useEffect(() => {
+ /*  useEffect(() => {
     fetch("/data.json")
       .then(response => response.json())
       .then(veri => {
@@ -25,7 +25,17 @@ const DataDetailsListComponent = () => {
         console.log(id);
       })
       .catch(error=>console.error('Hata oluştu',error));
-  }, [id,yonlendir]);
+  }, [id,yonlendir]); */
+
+  useEffect(()=>{
+    const eleman = data.find(d => d.id === parseInt(id));
+        if ( eleman === undefined){
+            console.log("Eleman bulunamadı.")
+            yonlendir('/not-found');
+            return;
+        }
+        veriAyarla(eleman);
+  },[id,yonlendir])
 
   if (!veri) {
     return <div>Loading...</div>;
