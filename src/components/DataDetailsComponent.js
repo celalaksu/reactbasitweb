@@ -11,7 +11,7 @@ const DataDetailsListComponent = () => {
   const yonlendir = useNavigate();
 
   useEffect(() => {
-    fetch(data)
+    fetch("/data.json")
       .then(response => response.json())
       .then(veri => {
         const eleman = veri.find(d => d.id === parseInt(id));
@@ -25,7 +25,7 @@ const DataDetailsListComponent = () => {
         console.log(id);
       })
       .catch(error=>console.error('Hata oluştu',error));
-  }, [id]);
+  }, [id,yonlendir]);
 
   if (!veri) {
     return <div>Loading...</div>;
