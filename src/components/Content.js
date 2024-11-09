@@ -6,6 +6,7 @@ import Contact from "../pages/Contact";
 import DataListComponent from "./DataListComponent";
 import DataDetailsListComponent from "./DataDetailsComponent";
 import NotFound from "./NotFound";
+import VerilerAsync from "../pages/VerilerAsync";
 
 const Content = () => {
   // kodlar
@@ -17,6 +18,7 @@ const Content = () => {
           <Route path="/hakkinda" element={<About />} />
           <Route path="/iletisim" element={<Contact />} />
           <Route path="/datalistcomponent" element={<DataListComponent />} />
+          <Route path="/verilera" element={<VerilerAsync />} />
           <Route path="/details/:id" element={<DataDetailsListComponent />} />
           <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />

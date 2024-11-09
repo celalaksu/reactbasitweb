@@ -19,6 +19,7 @@ const Navbar = () => {
           <li>
             <Link to="/datalistcomponent">Veri Al</Link>
           </li>
+          <li><Link to="/verilera">Veriler Async</Link></li>
         </ul>
       </nav>
     </div>

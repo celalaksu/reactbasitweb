@@ -1,25 +1,18 @@
 import React, { useEffect, useState } from "react";
+import Avatar from "../components/Avatar";
+import Card from "../components/Card";
 
 const About = () => {
-    const [sayi, sayiArttir] = useState(verial());
-
-    function verial() {
-        const veri = localStorage.getItem("sayi");
-        return veri ? Number(veri) : 0;
-    }
-  
-    function birEkleSakla(){
-        sayiArttir(sayi + 1);
-    } 
-    
-    useEffect(() => {
-        localStorage.setItem("sayi", sayi);
-    }, [sayi]);
-    return ( 
-        <div>
-            <button onClick={birEkleSakla} name="birEkleSakla">Sayı Arttır</button>
-            <p id="sayiDurum">{sayi}</p>
-        </div>
+    const kisi = { isim: "eemcs" };
+    return (
+      <div>
+        <h1>About </h1>
+        <br></br>
+        <Card>
+          <Avatar boyut={100} kisi={{ isim: kisi.isim }} />
+          <p>{kisi.isim}</p>
+        </Card>
+      </div>
     );
 }
 
