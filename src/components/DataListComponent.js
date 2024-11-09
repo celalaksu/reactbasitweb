@@ -5,20 +5,21 @@ import data from "../data/data.json";
 const DataListComponent = () => {
     const [veri, setData] = useState([]);
 
-    // useEffect(()=>{
-    //     fetch('../data.json') // dkfdlfjoejeowrfjıowefofjşosjdfjo - api key
-    //     .then(response => response.json())
-    //     .then(veri => {
-    //         setData(veri);
-    //         console.log(veri);
-    //     })
-    //     .catch(error=>console.error("Veri alınamadı", error));
-       
-    // },[])
-
     useEffect(()=>{
+        fetch('../data.json') // dkfdlfjoejeowrfjıowefofjşosjdfjo - api key
+        .then(response => response.json())
+        .then(veri => {
+            setData(veri);
+            console.log(veri);
+        })
+        .catch(error=>console.error("Veri alınamadı", error));
+       
+    },[])
+
+/*     useEffect(()=>{
         setData(data);
-    })
+        console.log(veri);
+    }) */
 
     if (veri.length === 0){
         return <div>Yükleniyor....</div>
